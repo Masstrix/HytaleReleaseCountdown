@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@font-face {
+  font-family: "Hebden";
+  src: url("./fonts/Hebden-Incised.woff2") format("woff2"), url("./fonts/Hebden-Incised.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+:root {
+  --color-gold: #ecbc62;
+  --color-gold-rgb: 236, 188, 98;
+  --color-gold-gradient: linear-gradient(#ffe98d, #e19f27);
+  --color-frost: #c3dbea;
+  --color-frost-gradient: linear-gradient(#f5fbff, #bfe6ff);
+  --color-dark: #10161e;
+}
+
+body {
+  background: black;
+  color: var(--color-frost);
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12pt;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  background: var(--color-frost-gradient);
+  color: var(--color-frost);
+}
+
+h2 {
+  background: var(--color-gold-gradient);
+  color: var(--color-gold);
+}
+
+h1,
+h2 {
+  font-family: "Hebden", serif;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 8pt;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+#enter {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+#enter.reveal {
+  opacity: 0;
+}
+
+.sub-heading {
+  font-size: 18pt;
+  font-weight: 500;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+#background .image {
+  background-image: url("./images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden;
+  flex-direction: column;
+}
+#main img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#main #banner {
+  width: 50vw;
+  max-width: 500px;
+  min-width: 100px;
+  margin-bottom: 30pt;
+}
+
+#links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  margin-top: 40pt;
+  max-width: 500pt;
+}
+#links a {
+  position: relative;
+  background-color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  margin-top: 8pt;
+  font-family: "Hebden", serif;
+  text-transform: uppercase;
+  font-size: 10pt;
+  background-color: var(--color-dark);
+  border: 2px solid rgba(var(--color-gold-rgb), 0.7);
+  border-radius: 6px;
+  transition: border-color 0.1s ease-in-out;
+}
+#links a:hover {
+  border: 2px solid rgba(var(--color-gold-rgb), 1);
+}
+#links a:hover > .inner {
+  background-image: linear-gradient(rgb(57, 66, 77), rgb(18, 21, 25));
+}
+#links a > .inner {
+  background-image: linear-gradient(rgb(38, 45, 53), rgb(18, 21, 25));
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12pt 20pt;
+  border: 1px solid rgba(var(--color-gold-rgb), 0.4);
+  border-radius: 4px;
+  margin: 4px;
+}
+#links a .icon {
+  margin-right: 10pt;
+}
+#links a img {
+  height: 12pt;
+}
+#links a:hover {
+  opacity: 100%;
+}
+@media (max-width: 800px) {
+  #links a {
+    width: 100%;
+    font-size: 8pt;
+  }
+  #links a > .inner {
+    width: 100%;
+    padding: 8pt 10pt;
+  }
+}
+
+#disclamer {
+  opacity: 0.5;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+}
+.countdown > * + * {
+  margin-left: 10pt;
+}
+.countdown .unit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 90pt;
+}
+.countdown .unit .time {
+  font-family: "Hebden", serif;
+  font-size: 40pt;
+}
+.countdown .unit .label {
+  font-size: 20pt;
+}
+@media (max-width: 680px) {
+  .countdown > * + * {
+    margin-left: 2pt;
+  }
+  .countdown .unit {
+    min-width: 60pt;
+  }
+  .countdown .unit .time {
+    font-size: 28pt;
+  }
+  .countdown .unit .label {
+    font-size: 12pt;
+  }
+}
+
+.icon {
+  display: inline-block;
+}
+.icon.discord {
+  background-image: url("./images/social-icon--discord.svg");
+  background-size: contain;
+  background-size: 26px;
+  width: 26px;
+  height: 26px;
+}
+
+.card {
+  padding: 24pt;
+  position: relative;
+  z-index: 2;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -10pt;
+  left: -10pt;
+  width: calc(100% + 20pt);
+  height: calc(100% + 20pt);
+  border-radius: 8pt;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(21, 36, 58);
+  border-radius: 4pt;
+  border: 2px solid rgba(var(--color-gold-rgb), 0.4);
+}
